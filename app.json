@@ -4,9 +4,8 @@
   "scripts": {
   },
   "env": {
-    "CLEARDB_DATABASE_URL": {
-      "description": "db.",
-      "value": "mysql://b1ce5657a719d0:e31a5dd5@us-cdbr-iron-east-01.cleardb.net/heroku_8b78ab3e2c5e9d3?reconnect=true"
+    "INHERIT_CLEARDB_DATABASE_URL": {
+		"required": true
     }
   },
    "formation": {
