@@ -14,7 +14,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/test', function() {
+$router->get('/withoutauth', function() {
 	return response()->json([
 		'message' => 'WOW! without Auth',
 	]);
@@ -23,7 +23,7 @@ $router->post('/auth/login', 'AuthController@postLogin');
 
 $router->group(['middleware' => 'auth:api'], function($router)
 {
-	$router->get('/test', function() {
+	$router->get('/withauth', function() {
 		return response()->json([
 			'message' => 'WOW! with Auth',
 		]);
