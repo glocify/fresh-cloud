@@ -4,18 +4,16 @@
   "scripts": {
   },
   "env": {
-    "CLEARDB_DATABASE_URL": {
-      "required": true
+    "INHERIT_CLEARDB_DATABASE_URL": {
+		"required": true
     }
   },
-  {
    "formation": {
     "web": {
       "quantity": 1,
       "size": "free"
     }
-   }
-  },
+   },
   "addons": [
 
   ],

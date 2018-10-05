@@ -14,27 +14,30 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-
+$router->get('/withoutauth', function() {
+	return response()->json([
+		'message' => 'WOW! without Auth',
+	]);
+});
 $router->post('/auth/login', 'AuthController@postLogin');
 
 $router->group(['middleware' => 'auth:api'], function($router)
 {
-    $router->get('/test', function() {
-        return response()->json([
-            'message' => 'wow!',
-        ]);
-    });
+	$router->get('/withauth', function() {
+		return response()->json([
+			'message' => 'WOW! with Auth',
+		]);
+	});
+	$router->get('users',  ['uses' => 'UserController@showAllUsers']);
 
-  $router->get('users',  ['uses' => 'UserController@showAllUsers']);
+	$router->get('users/{id}', ['uses' => 'UserController@showOneUser']);
 
-  $router->get('users/{id}', ['uses' => 'UserController@showOneUser']);
+	$router->post('users', ['uses' => 'UserController@create']);
 
-  $router->post('users', ['uses' => 'UserController@create']);
+	$router->delete('users/{id}', ['uses' => 'UserController@delete']);
 
-  $router->delete('users/{id}', ['uses' => 'UserController@delete']);
-
-  $router->put('users/{id}', ['uses' => 'UserController@update']);	
-	
+	$router->put('users/{id}', ['uses' => 'UserController@update']);	
+		
 	
 });
 
