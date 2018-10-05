@@ -5,7 +5,7 @@
   },
   "env": {
     "CLEARDB_DATABASE_URL": {
-      "required": true,
+      "required": true
     }
   },
    "formation": {
