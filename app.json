@@ -6,7 +6,6 @@
   "env": {
     "CLEARDB_DATABASE_URL": {
       "required": true,
-	  "value": "inherit"
     }
   },
    "formation": {
