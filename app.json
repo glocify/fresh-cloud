@@ -5,8 +5,8 @@
   },
   "env": {
     "CLEARDB_DATABASE_URL": {
-		"generator": "inherit",
-    }
+      "required": true
+    },	
   },
    "formation": {
     "web": {
