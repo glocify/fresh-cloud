@@ -4,8 +4,9 @@
   "scripts": {
   },
   "env": {
-    "INHERIT_CLEARDB_DATABASE_URL": {
-      "required": true
+    "CLEARDB_DATABASE_URL": {
+      "required": true,
+	  "inherit": true
     }
   },
    "formation": {
